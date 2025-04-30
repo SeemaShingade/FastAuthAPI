@@ -1,5 +1,4 @@
 # FastAuthAPI
-# 🔐 Fastify Auth API
 
 A simple authentication API using Fastify (Node.js) with support for:
 - User registration & login
@@ -33,3 +32,6 @@ A simple authentication API using Fastify (Node.js) with support for:
 git clone <your-repo-url>
 cd project-root
 npm install
+
+## Configure Environment Variables
+Create a .env file in the root:
