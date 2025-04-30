@@ -80,6 +80,16 @@ GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
 GITHUB_REDIRECT_URL=http://localhost:4000/githubLogin/callback  //optional
 ```
+## 🧪 Running the Server
+### 1. Development Mode
+```bash
+npm run dev
+```
+### 2. Production Mode
+```bash
+npm start
+```
+
 ## 📬 API Endpoints
 | Method | Endpoint                        | Description               |
 |--------|----------------------------------|---------------------------|
