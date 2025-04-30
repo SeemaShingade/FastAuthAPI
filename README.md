@@ -33,5 +33,5 @@ git clone <your-repo-url>
 cd project-root
 npm install
 
-## Configure Environment Variables
+### 2. Configure Environment Variables
 Create a .env file in the root:
