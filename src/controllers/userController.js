@@ -10,7 +10,7 @@ export const getAllUsers = async (req, reply) => {
 export const getUserById = async (req, reply) => {
   const { id } = req.params
   const user = await User.findById(id)
-  return user || reply.code(404).send({ message: 'User not found' })
+  return user || reply.code(400).send({ message: 'User not found' })
 }
 
 export const createUser = async (req, reply) => {
@@ -29,7 +29,7 @@ export const createUser = async (req, reply) => {
         return reply.code(200).send({ message: 'User registered', user: newUser })
       } catch (err) {
         console.error('Registration Error:', err)
-        return reply.code(500).send({ error: 'User registration failed' })
+        return reply.code(400).send({ error: 'User registration failed' })
       }
 
     }
@@ -46,7 +46,7 @@ export const createUser = async (req, reply) => {
         // match password
         const isMatch = await bcrypt.compare(password, value.password)
         if (!isValidPassword) {
-            return reply.status(401).send({ message: 'Invalid credentials' })
+            return reply.status(400).send({ message: 'Invalid credentials' })
         }
         // Generate JWT token
         const token = jwt.sign({ id: findUser.id ,email:findUser.email}, process.env.JWT_SECRET, { expiresIn: '1h' })
